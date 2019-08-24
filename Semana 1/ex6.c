@@ -16,15 +16,15 @@ typedef struct {
 
 typedef int bool;
 
+/* Joga sempre o Ãºltimo elemento inserido em primeiro lugar */
 void exibeLista(LISTA* l) {
-    int i = 0;
+    int i;
 
     for(i = 0; i < l->nroElem; i++) {
         printf("[%i] -----> CHAVE %i\n", i, l->A[i].chave);
     }
 }
 
-/* Sobrescrita de números não inicializados na posição 0 */
 bool inserirNovo(LISTA* l, REGISTRO reg){
    if (l->nroElem >= MAX) return false;
    l->A[l->nroElem] = l->A[0];
@@ -43,11 +43,11 @@ int main() {
     REGISTRO r1;
     r1.chave = 10;
     REGISTRO r2;
-    r1.chave = 20;
+    r2.chave = 20;
     REGISTRO r3;
-    r1.chave = 30;
+    r3.chave = 30;
     REGISTRO r4;
-    r1.chave = 40;
+    r4.chave = 40;
 
     inserirNovo(&l, r1);
     inserirNovo(&l, r2);
